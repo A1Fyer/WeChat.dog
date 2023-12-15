@@ -124,7 +124,7 @@ function gameRestart() {
     _gameScore = 0;
     _gameOver = false;
     _gameStart = false;
-    _gameTimeNum = 30;
+    _gameTimeNum = 20;
     GameTimeLayer.innerHTML = creatTimeText(_gameTimeNum);
     countBlockSize();
     refreshGameLayer(GameLayer[0]);
@@ -343,10 +343,10 @@ function shareText(score) {
         return '倒计时多了' + ((deviation_time / 1000) - 20).toFixed(2) + "s";
     }
     SubmitResults();
-    if (score >= 100) return '100个nb';
-    if (score >= 160) return '有点实力，但不多';
-    if (score >= 250) return '太有实力了！！！';
-    if (score >= 300) return '唱 跳 rap 篮球';
+    if (score <= 100) return '100个nb';
+    if (score <= 160) return '有点实力，但不多';
+    if (score <= 250) return '太有实力了！！！';
+    if (score <= 300) return '唱 跳 rap 篮球';
     return '你就是蔡徐坤本人？';
 }
 
